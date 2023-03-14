@@ -1,12 +1,60 @@
+body{
+    background-color: black;
+}
 
-/* 
+#container{
+    height: 46.5rem;
+    background-image: url("https://th.bing.com/th/id/R.eb24451b0077dd0a623806bbd2a576e5?rik=vf%2bMa2MQljbLGA&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f160000%2fnahled%2fbackground-wallpaper-aged-peach.jpg&ehk=ZfKvlxer%2fM%2bL3WQhoTqlgL8jIoh2rFwogsHRxoGoqk4%3d&risl=&pid=ImgRaw&r=0");
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+#title{
+    color: rgb(210, 153, 163);
+    opacity: 0.7;
+    font-size: 13rem;
+    font-family: 'Barlow Condensed', sans-serif;
+}
 
-*/
+#input{
+    height: 5rem;
+    border-radius: 0;
+    background-color: rgb(249, 237, 228);
+    border: 0.1px solid rgb(249, 237, 228);
+    box-shadow: 5px 5px 12px rgb(142, 142, 142);
+    padding: auto;
+    font-size: 1.7rem;
+    font-family: 'Lora', serif;
+    color: gray;
+}
+
+
+ul li{
+    list-style:none;
+    height: 5rem;
+    background-color: rgb(249, 237, 228);
+    border: 0.1px solid rgb(249, 237, 228);
+    box-shadow: 5px 5px 12px rgb(142, 142, 142);
+    padding: 1rem;
+    font-size: 1.7rem;
+    font-family: 'Lora', serif;
+    color: gray;
+}
+
+#footer{
+    height: 3rem;
+    border-radius: 0;
+    background-color: rgb(249, 237, 228);
+    border: 0.1px solid rgb(249, 237, 228);
+    box-shadow: 5px 5px 12px rgb(142, 142, 142);
+    font-size: 1.3rem;
+    font-family: 'Lora', serif;
+    color: gray;
+}
+
+.fa{
+    color: rgb(210, 153, 163);
+}
+
+button{
+    border: none;
+    background-color: transparent;
+}

@@ -1,25 +1,59 @@
 import React from "react";
+import {useState} from "react";
+import Title from "./title.jsx";
+import Input from "./input.jsx";
+import List from "./list.jsx";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
 //create your first component
 const Home = () => {
+
+	const [userInput, setUserInput] = useState('');
+
+	const [toDoList, setToDoList] = useState([]);
+
+	const newToDoItem = {
+		id:Date.now(),
+		task: userInput,
+	}
+
+
+	const handleChange = (e) =>{
+		setUserInput(e.target.value);
+		console.log(userInput);
+	}
+
+	let enter = 13;
+	const handleKeyPressed=(e)=>{
+		if(e.keyCode == enter){
+			e.preventDefault();
+    		if(userInput===''){
+				alert('You must fill the input');
+			}else{
+	 			setToDoList(toDoList=>[...toDoList, newToDoItem]);
+	 		
+	 			setUserInput('')
+	 			console.log(toDoList);
+			}
+			document.getElementById("input").value='';
+		}
+	}
+
+	
+
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
+		<>
+			<div id="container" className="container-sm text-center">
+				<Title />
+				<div className="row justify-content-center">
+					<div className="col-sm-3 col-md-7 col-lg-9">
+						
+						<Input handleChange={handleChange} handleKeyPressed={handleKeyPressed}/>
+						<List toDoList={toDoList} setToDoList={setToDoList}/>
+					</div>
+				</div>
+			</div>
+		</>
 	);
 };
 
