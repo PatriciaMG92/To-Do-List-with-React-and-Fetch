@@ -3,15 +3,15 @@ import ItemsOfList from "./itemslist.jsx";
 import Footer from "./footer.jsx"
 
 
-const List = (props) => {
+const List = ({toDoList, setToDoList, updateToDos}) => {
 
-	const {toDoList, setToDoList} = props;
 
 	const deleteTask=(id)=>{
 		const newToDoListWithFilter=toDoList.filter(item=>item.id !==id);
 		setToDoList(newToDoListWithFilter);
 		console.log(id);
-		console.log(newToDoListWithFilter)
+		console.log(newToDoListWithFilter);
+		updateToDos(newToDoListWithFilter);
 	}
 
 	return (
