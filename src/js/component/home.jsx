@@ -92,9 +92,11 @@ const Home = () => {
 				"Content-Type": "application/json"
 			  }
 		})
-		.then(res => {
-			if (!res.ok) throw Error(res.statusText);
-			return res.json();
+		.then(resp => {
+			console.log(resp.ok); 
+			console.log(resp.status);
+			console.log(resp.text()); 
+			return resp.json();
 		})
 		.then(data => {
 			console.log("Success", data);
